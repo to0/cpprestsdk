@@ -1003,7 +1003,8 @@ private:
                 default: break;
             }
         }
-        request_context::report_error(errorcodeValue, message);
+        std::string appended_error_code = message + " " + ec.category().name() + " " + ec.message();
+        request_context::report_error(errorcodeValue, appended_error_code);
     }
 
     void handle_connect(const boost::system::error_code& ec, tcp::resolver::iterator endpoints)

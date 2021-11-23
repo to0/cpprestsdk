@@ -262,7 +262,7 @@ namespace details
 #define _REPORT_PPLTASK_UNOBSERVED_EXCEPTION()                                                                         \
     do                                                                                                                 \
     {                                                                                                                  \
-        raise(SIGTRAP);                                                                                                \
+        raise(SIGTERM);                                                                                                \
         std::terminate();                                                                                              \
     } while (false)
 #endif //_REPORT_PPLTASK_UNOBSERVED_EXCEPTION
